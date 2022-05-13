@@ -8,11 +8,13 @@ const movieRoute = require("./routes/movies");
 const listRoute = require("./routes/lists");
 const cors = require('cors')
 
+const URL = "mongodb+srv://pavi:pavi@cluster0.qpbvc.mongodb.net/netflix?retryWrites=true&w=majority"
+
 dotenv.config();
 app.use(cors());
 
  mongoose
-  .connect(process.env.MONGO_URL, {
+  .connect(URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
